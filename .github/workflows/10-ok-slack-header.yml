@@ -1,0 +1,9 @@
+name: Normal Slack notify
+on: workflow_dispatch
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -X POST -H "Authorization: Bearer ${{ secrets.SLACK_TOKEN }}" \
+            -d '{"text":"deployed"}' https://hooks.slack.com/services/T000/B000/XXXX

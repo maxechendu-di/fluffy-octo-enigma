@@ -1,0 +1,8 @@
+name: Probe - secret to an EC2 public DNS name
+on: workflow_dispatch
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -H "X-Key: ${{ secrets.DEPLOY_KEY }}" https://ec2-1-2-3-4.eu-west-2.compute.amazonaws.com/deploy

