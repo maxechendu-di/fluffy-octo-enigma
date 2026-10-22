@@ -1,4 +1,4 @@
-name: Probe - toJSON(secrets) only in a comment
+name: Probe - secrets dump only in a comment
 on: workflow_dispatch
 # Never do this: ${{ toJSON(secrets) }}
 jobs:
