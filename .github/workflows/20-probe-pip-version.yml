@@ -1,9 +1,0 @@
-name: Probe - four-part version in a secret+curl step
-on: workflow_dispatch
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          pip install somepkg==1.2.3.4
-          curl -H "Authorization: Bearer ${{ secrets.PYPI_TOKEN }}" https://upload.pypi.org/legacy/
